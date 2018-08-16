@@ -10,5 +10,6 @@ The project folder contains Makefile to compilation
 # Compilation and Running
 
 make buildemulator
+
 ./emulator comFile debugOption
 
