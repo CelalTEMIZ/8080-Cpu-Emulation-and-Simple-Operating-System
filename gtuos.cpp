@@ -64,8 +64,6 @@ uint16_t GTUOS::read_mem(const CPU8080 &cpu)
     int userInput;
     std::cin>>userInput;
 
-    // eski
-    //cpu.memory[address] = userInput;
 
     cpu.memory->at(address) = userInput;
     
@@ -81,8 +79,7 @@ uint16_t GTUOS::print_mem(const CPU8080 &cpu)
     uint16_t address = (cpu.state->b << 8) | cpu.state->c;
     std::cout << std::endl<< "PRINT_MEM is called" << std::endl;
     
-    // eski
-    //printf("Register BC : %d\n", cpu.memory[address]);
+
 
     std::cout<<"Register BC : " << (int)cpu.memory->at(address) << std::endl;
 
@@ -106,8 +103,7 @@ uint16_t GTUOS::read_str(const CPU8080 &cpu)
 
     for(int i=0; i<userInput.length(); ++i)
     {
-        // eski
-        //cpu.memory[address] = userInput[i];
+        
 
         cpu.memory->at(address) = userInput[i];
         ++address;
@@ -125,13 +121,10 @@ uint16_t GTUOS::print_str(const CPU8080 &cpu)
     uint16_t address = (cpu.state->b << 8) | cpu.state->c;
     std::cout<< std::endl<< "PRINT_STR is called"<<std::endl;
 
-    // eski
-    //while(cpu.memory[address] !='\0')
+
 
     while(cpu.memory->at(address) !='\0')
     {
-        // eski
-        //std::cout<<cpu.memory[address];
         
         printf("%c",(char)cpu.memory->at(address));
 
